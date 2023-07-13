@@ -41,12 +41,12 @@ async function orderNumber(agent) {
         const shippedRes = moment(apiRes.shipmentDate).format("dddd, MMMM Do YYYY, h:mm:ss A");
 
         //here is the response of dialogflow which is going through node server to dialogflow
-        agent.add(`Your order ${orderId} will be shipped by ${shippedRes}`);
+        agent.add(`Your Order Id Is ${orderId}. And Your Order Will Be Shipped on ${shippedRes}.`);
 
     } catch (err) {
         // if the input is not valid then it will show the error message
         console.log(err);
-        agent.add("No orders against the provided order id is found.");
+        agent.add("There Is No Order Against The Order Id That You Provide.");
     }
 }
 
