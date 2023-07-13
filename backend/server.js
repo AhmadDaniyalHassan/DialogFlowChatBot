@@ -33,7 +33,7 @@ app.post("/webhook", (req, res) => {
 async function orderNumber(agent) {
     let orderId = agent.parameters.number;
     try {
-        const { response } = await axios.post("https://orderstatusapi-dot-organization-project-311520.uc.r.appspot.com/api/getOrderStatus", { orderId: orderId }, { headers: { "Content-Type": "application/json" } });
+        const response = await axios.post(`${process.env.API}`, { orderId: orderId }, { headers: { "Content-Type": "application/json" } });
 
         const apiRes = response.data;
 
